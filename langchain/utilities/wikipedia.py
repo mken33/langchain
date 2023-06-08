@@ -23,7 +23,7 @@ class WikipediaAPIWrapper(BaseModel):
 
     wiki_client: Any  #: :meta private:
     top_k_results: int = 3
-    lang: str = "en"
+    lang: str = "ja"
     load_all_available_meta: bool = False
     doc_content_chars_max: int = 4000
 
