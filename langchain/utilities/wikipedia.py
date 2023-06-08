@@ -49,6 +49,7 @@ class WikipediaAPIWrapper(BaseModel):
 
     def run(self, query: str) -> str:
         """Run Wikipedia search and get page summaries."""
+        print("running query:", query)
         page_titles = self.wiki_client.search(query[:WIKIPEDIA_MAX_QUERY_LENGTH])
         summaries = []
         for page_title in page_titles[: self.top_k_results]:
