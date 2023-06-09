@@ -53,6 +53,7 @@ class WikipediaAPIWrapper(BaseModel):
         page_titles = self.wiki_client.search(query[:WIKIPEDIA_MAX_QUERY_LENGTH])
         summaries = []
         for page_title in page_titles[: self.top_k_results]:
+            print("page_title queried: ", page_title)
             if wiki_page := self._fetch_page(page_title):
                 if summary := self._formatted_page_summary(page_title, wiki_page):
                     summaries.append(summary)
